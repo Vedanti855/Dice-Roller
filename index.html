@@ -5,7 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
 </head>
+<style>
+    .container{
+        width:300px;
+        border:4px double #8533FF;
+        border-radius: 10px;
+        display:block;
+        margin:30px auto;
+        background-color:white;
+    }
+
+    .heading{
+        text-align: center;
+        color: #8533FF;
+    }
+
+    .img-dice{
+        width: 200px;
+        display: block;
+        margin:20px auto;
+    }
+
+    .btn-roll{
+        display: block;
+        margin:20px auto;
+        background-color: #8533FF;
+        color: white;
+        font-size: 20px;
+        padding: 10px 40px;
+        border-radius: 50px;
+        border:none;
+        cursor: pointer;
+        margin-top:30px;
+        transition:background-color 0.3s,transform 0.3s;
+    }
+
+    .btn-roll:hover{
+        background-color: #682bb7;
+        transform:scale(1.05);
+    }
+
+</style>
 <body>
-    
-</body>
+<div class="container">
+    <h1 class="heading">
+        Dice Roller</h1>
+
+    <img src="img/dice .png" alt="Dice" class="img-dice" id="dice"/>
+
+    <button type="button" class="btn-roll" onclick="rollDice()">Roll Dice</button>
+</div>
+
+<script>
+   
+    function rollDice() {
+            const min = 1;
+            const max = 6;
+           const randomNum= Math.floor(Math.random() * (max - min + 1)) + min;
+
+           const diceimg = document.getElementById("dice");
+         
+        switch (randomNum){
+              case 1:
+                 diceimg.src = "img/dice1.png";
+                      break;
+              case 2:
+                diceimg.src = "img/dice2.png";
+                     break;
+              case 3:
+                diceimg.src = "img/dice3.png";
+                     break;
+              case 4:
+                diceimg.src = "img/dice4.png";
+                     break;
+             case 5:
+                diceimg.src = "img/dice5.png";
+                    break;
+            case 6:
+                diceimg.src = "img/dice6.png";
+                   break;
+            default:
+                console.error("Invalid dice roll");
+            }
+        }
+
+</script>
+    </body>
 </html>
